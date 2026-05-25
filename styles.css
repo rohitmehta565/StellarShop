@@ -1,0 +1,310 @@
+@page {
+    margin: 2.5cm;
+    size: A4;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    font-size: 12pt;
+    color: #333;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 28pt;
+    margin-top: 3cm;
+    margin-bottom: 2cm;
+    color: #2c3e50;
+    text-align: center;
+    page-break-after: avoid;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 20pt;
+    margin-top: 2cm;
+    margin-bottom: 1cm;
+    color: #34495e;
+    page-break-after: avoid;
+    border-bottom: 3px solid #eee;
+    padding-bottom: 0.5cm;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 16pt;
+    margin-top: 1.5cm;
+    margin-bottom: 1cm;
+    color: #2c3e50;
+    page-break-after: avoid;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 0.8cm;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+ul, ol {
+    margin-bottom: 0.8cm;
+    padding-left: 1.5cm;
+}
+
+li {
+    margin-bottom: 0.5cm;
+    line-height: 1.8;
+}
+
+.section {
+    margin-bottom: 2cm;
+    page-break-inside: avoid;
+}
+
+.subsection {
+    margin-bottom: 1.5cm;
+    page-break-inside: avoid;
+}
+
+.feature-list {
+    margin-bottom: 1cm;
+}
+
+.feature-list li {
+    margin-bottom: 0.8cm;
+}
+
+.feature-list ul {
+    margin-top: 0.5cm;
+    margin-bottom: 0.5cm;
+}
+
+.feature-list ul li {
+    margin-bottom: 0.4cm;
+}
+
+.technical-detail {
+    font-size: 11pt;
+    color: #555;
+    margin-bottom: 0.5cm;
+    line-height: 1.8;
+}
+
+/* Force page breaks before major sections */
+h1 {
+    page-break-before: always;
+}
+
+h2 {
+    page-break-before: always;
+}
+
+/* Prevent orphaned headings */
+h1, h2, h3 {
+    orphans: 3;
+    widows: 3;
+}
+
+/* Ensure lists don't break across pages */
+ul, ol {
+    page-break-inside: avoid;
+}
+
+/* Add spacing between sections */
+.section + .section {
+    margin-top: 2cm;
+}
+
+/* Improve readability of nested lists */
+ul ul, ol ol {
+    margin-top: 0.5cm;
+    margin-bottom: 0.5cm;
+}
+
+/* Add visual separation for major sections */
+.section:not(:last-child) {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1.5cm;
+    margin-bottom: 2cm;
+}
+
+/* Ensure proper spacing in lists */
+li > ul, li > ol {
+    margin-top: 0.5cm;
+    margin-bottom: 0.5cm;
+}
+
+/* Add emphasis to important points */
+strong {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Improve table formatting */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1cm 0;
+    page-break-inside: avoid;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5cm;
+    text-align: left;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+/* Code block formatting */
+pre {
+    background-color: #f8f9fa;
+    padding: 0.8cm;
+    margin: 0.8cm 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    page-break-inside: avoid;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f8f9fa;
+    padding: 0.2cm 0.4cm;
+    border-radius: 3px;
+}
+
+/* Add page numbers */
+@page {
+    @bottom-center {
+        content: counter(page);
+        font-family: Arial, sans-serif;
+        font-size: 10pt;
+    }
+}
+
+/* Add more spacing for lists */
+li + li {
+    margin-top: 0.3cm;
+}
+
+/* Increase spacing for nested content */
+.feature-list ul li {
+    margin-bottom: 0.6cm;
+}
+
+/* Add more emphasis to section titles */
+h2::after {
+    content: "";
+    display: block;
+    height: 0.2cm;
+    background: linear-gradient(to right, #eee, transparent);
+    margin-top: 0.3cm;
+}
+
+/* Improve readability of technical content */
+.technical-detail {
+    background-color: #fafafa;
+    padding: 0.5cm;
+    border-left: 3px solid #2c3e50;
+    margin: 0.5cm 0;
+}
+
+/* Add more spacing for subsections */
+.subsection + .subsection {
+    margin-top: 1.5cm;
+}
+
+/* Improve list item spacing */
+.feature-list > li {
+    margin-bottom: 1cm;
+}
+
+/* Add more emphasis to important sections */
+.section:first-of-type {
+    margin-top: 3cm;
+}
+
+/* Improve table readability */
+table th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+    padding: 0.6cm;
+}
+
+table td {
+    padding: 0.5cm;
+    vertical-align: top;
+}
+
+/* Add more spacing for code blocks */
+pre {
+    margin: 1cm 0;
+    padding: 1cm;
+}
+
+/* Improve heading hierarchy */
+h1 + h2 {
+    margin-top: 2.5cm;
+}
+
+h2 + h3 {
+    margin-top: 1.8cm;
+}
+
+/* Add more emphasis to bullet points */
+.feature-list li::before {
+    content: "•";
+    color: #2c3e50;
+    font-weight: bold;
+    display: inline-block;
+    width: 1cm;
+    margin-left: -1cm;
+}
+
+@media print {
+    @page {
+        margin: 1.5cm;
+        size: A4;
+    }
+    
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+/* Additional styles for better content organization */
+.bullet-point {
+    margin-left: 0.6cm;
+    margin-bottom: 0.2cm;
+}
+
+/* Add spacing between major sections */
+h1 + h2 {
+    margin-top: 1.2cm;
+}
+
+h2 + h3 {
+    margin-top: 0.8cm;
+}
+
+/* Improve list formatting */
+ul li, ol li {
+    margin-bottom: 0.2cm;
+}
+
+/* Add visual separation for sections */
+.section:not(:last-child) {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.4cm;
+    margin-bottom: 0.8cm;
+} 
